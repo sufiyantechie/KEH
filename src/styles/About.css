@@ -1,91 +1,137 @@
 .about-container {
   padding: 80px 40px;
   text-align: center;
-  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  background: #E3F2FD;
   min-height: 100vh;
 }
 
 .about-container h2 {
-  font-size: 3rem;
-  color: #2c3e50;
-  margin-bottom: 50px;
+  font-size: 2.5rem;
+  color: #263238;
+  margin-bottom: 60px;
   font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(45deg, #FFA726, #FF8F00);
+  padding: 15px 30px;
+  border-radius: 50px;
+  color: #5D4037;
+  display: inline-block;
+  box-shadow: 0 15px 35px rgba(255, 167, 38, 0.3);
 }
 
 .staff-cards {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
-  flex-wrap: wrap;
-  max-width: 800px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
-.card {
-  width: 320px;
-  background: rgba(255, 255, 255, 0.95);
+.staff-card {
+  background: linear-gradient(145deg, #FFD700, #FFA500);
   border-radius: 25px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-  padding: 30px;
+  padding: 8px;
+  box-shadow: 0 25px 50px rgba(255, 215, 0, 0.3);
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(10px);
 }
 
-.card::before {
+.staff-card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, rgba(37, 161, 98, 0.1), rgba(30, 134, 81, 0.1));
+  background: linear-gradient(45deg, rgba(255, 215, 0, 0.1), rgba(255, 165, 0, 0.1));
+  z-index: 1;
+  pointer-events: none;
+}
+
+.staff-card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 35px 70px rgba(255, 215, 0, 0.4);
+}
+
+.card-inner {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 30px 25px;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.image-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 25px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #FFD700;
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.golden-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255, 215, 0, 0.2), rgba(255, 165, 0, 0.2));
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-.card:hover::before {
+.staff-card:hover .golden-overlay {
   opacity: 1;
 }
 
-.card:hover {
-  transform: translateY(-15px) scale(1.03);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.2);
-}
-
-.card img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  margin-bottom: 20px;
-  object-fit: cover;
-  border: 4px solid #25a162;
-  transition: transform 0.3s ease;
-}
-
-.card:hover img {
+.staff-card:hover .image-container img {
   transform: scale(1.1);
 }
 
-.card h3 {
+.card-content h3 {
   font-size: 1.5rem;
-  margin: 15px 0 5px;
-  color: #2c3e50;
-  font-weight: 600;
+  margin-bottom: 8px;
+  color: #263238;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
 }
 
-.card p {
+.role {
   font-size: 1rem;
-  color: #5a6c7d;
-  line-height: 1.6;
-  margin: 10px 0;
+  color: #FFA726;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-style: italic;
 }
 
-.card p em {
-  color: #25a162;
-  font-weight: 600;
-  font-style: normal;
+.specialization {
+  font-size: 0.9rem;
+  color: #FF8F00;
+  font-weight: 500;
+  margin-bottom: 15px;
+  padding: 5px 15px;
+  background: rgba(255, 167, 38, 0.1);
+  border-radius: 15px;
+  display: inline-block;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #263238;
+  line-height: 1.6;
+  margin-bottom: 0;
 }
 
 @media (max-width: 768px) {
@@ -95,31 +141,15 @@
   
   .about-container h2 {
     font-size: 2.2rem;
+    padding: 15px 25px;
   }
   
   .staff-cards {
-    gap: 25px;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
   
-  .card {
-    width: 300px;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-container {
-    padding: 40px 15px;
-  }
-  
-  .about-container h2 {
-    font-size: 1.9rem;
-  }
-  
-  .card {
-    width: 100%;
-    max-width: 320px;
-    margin: 0 auto;
-    padding: 25px;
+  .card-inner {
+    padding: 25px 20px;
   }
 }

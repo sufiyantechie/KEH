@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 15px 40px;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px rgba(0,0,0,0.1);
@@ -12,19 +12,27 @@
   transition: all 0.3s ease;
 }
 
-.logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  background: linear-gradient(45deg, #25a162, #1e8651);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  cursor: pointer;
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  height: 80px;
+  width: auto;
   transition: transform 0.3s ease;
 }
 
-.logo:hover {
-  transform: scale(1.05);
+.logo-img:hover {
+  transform: scale(1.1);
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #FFA726;
+  font-family: 'Poppins', sans-serif;
 }
 
 .nav-links {
@@ -37,35 +45,19 @@
 
 .nav-links li a {
   text-decoration: none;
-  color: #2c3e50;
-  font-weight: 500;
-  font-size: 1.1rem;
-  padding: 8px 16px;
+  color: #263238;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 10px 20px;
   border-radius: 25px;
   transition: all 0.3s ease;
-  position: relative;
-}
-
-.nav-links li a::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(45deg, #25a162, #1e8651);
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
+  background: linear-gradient(45deg, #FFA726, #FF8F00);
+  color: #5D4037;
 }
 
 .nav-links li a:hover {
-  color: #25a162;
-  background: rgba(37, 161, 98, 0.1);
   transform: translateY(-2px);
-}
-
-.nav-links li a:hover::before {
-  width: 80%;
+  box-shadow: 0 8px 25px rgba(255, 167, 38, 0.4);
 }
 
 .hamburger {
@@ -79,13 +71,9 @@
 .hamburger span {
   width: 25px;
   height: 3px;
-  background: linear-gradient(45deg, #25a162, #1e8651);
+  background: #FFA726;
   transition: 0.3s;
   border-radius: 2px;
-}
-
-.hamburger:hover span {
-  background: #1e8651;
 }
 
 @media (max-width: 768px) {
@@ -94,8 +82,8 @@
     flex-wrap: wrap;
   }
   
-  .logo {
-    font-size: 1.4rem;
+  .logo-text {
+    font-size: 1.2rem;
   }
   
   .hamburger {
@@ -111,7 +99,6 @@
     background: rgba(255, 255, 255, 0.95);
     border-radius: 15px;
     padding: 20px 0;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   }
   
   .nav-links.active {
@@ -119,15 +106,10 @@
     animation: slideDown 0.3s ease;
   }
   
-  .nav-links li {
-    text-align: center;
-    padding: 10px 0;
-  }
-  
   .nav-links li a {
     display: block;
     padding: 12px 20px;
-    margin: 0 20px;
+    margin: 5px 20px;
   }
 }
 

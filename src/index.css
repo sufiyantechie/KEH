@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -10,12 +12,13 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
-  color: #2c3e50;
+  color: #263238;
   overflow-x: hidden;
+  background: #E3F2FD;
 }
 
 code {
@@ -33,10 +36,10 @@ code {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #25a162, #1e8651);
+  background: linear-gradient(45deg, #FFA726, #FF8F00);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #1e8651;
+  background: #FF8F00;
 }

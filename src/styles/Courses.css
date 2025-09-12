@@ -1,34 +1,42 @@
 .courses-container {
   padding: 80px 40px;
   text-align: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #E3F2FD;
   min-height: 100vh;
 }
 
 .courses-container h2 {
-  font-size: 3rem;
-  color: white;
-  margin-bottom: 50px;
+  font-size: 2.5rem;
+  color: #263238;
+  margin-bottom: 60px;
   font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(45deg, #FFA726, #FF8F00);
+  padding: 15px 30px;
+  border-radius: 50px;
+  color: #5D4037;
+  display: inline-block;
+  box-shadow: 0 15px 35px rgba(255, 167, 38, 0.3);
 }
 
 .course-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1400px;
+  margin: 0 auto 60px;
 }
 
 .course-card {
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
-  padding: 35px 25px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  background: var(--card-bg);
+  border-radius: 25px;
+  padding: 40px 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 167, 38, 0.2);
 }
 
 .course-card::before {
@@ -37,45 +45,99 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 4px;
-  background: linear-gradient(45deg, #25a162, #1e8651);
+  height: 6px;
+  background: linear-gradient(45deg, #FFA726, #FF8F00);
 }
 
 .course-card:hover {
-  transform: translateY(-15px) scale(1.02);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 30px 60px rgba(255, 167, 38, 0.2);
+}
+
+.course-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: bounce 2s infinite;
 }
 
 .course-card h3 {
-  font-size: 1.8rem;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #263238;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #FFA726;
   margin-bottom: 20px;
-  color: #2c3e50;
   font-weight: 600;
 }
 
-.course-card p {
-  font-size: 1rem;
-  margin-bottom: 25px;
-  color: #5a6c7d;
-  line-height: 1.6;
+.description {
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+  color: #263238;
+  line-height: 1.7;
 }
 
 .course-card button {
-  padding: 12px 30px;
-  background: linear-gradient(45deg, #25a162, #1e8651);
-  color: white;
+  padding: 15px 35px;
+  background: linear-gradient(45deg, #FFA726, #FF8F00);
+  color: #5D4037;
   border: none;
-  border-radius: 25px;
+  border-radius: 30px;
   cursor: pointer;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(37, 161, 98, 0.3);
+  box-shadow: 0 8px 20px rgba(255, 167, 38, 0.3);
+  font-family: 'Poppins', sans-serif;
 }
 
 .course-card button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(37, 161, 98, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(255, 167, 38, 0.4);
+}
+
+.soft-skills-section {
+  margin-top: 60px;
+}
+
+.soft-skills-card {
+  background: var(--card-bg);
+  border-radius: 25px;
+  padding: 50px 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 25px 50px rgba(255, 167, 38, 0.15);
+  border: 3px solid #FFA726;
+  position: relative;
+  overflow: hidden;
+}
+
+.soft-skills-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(45deg, #FFA726, #FF8F00);
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
 }
 
 @media (max-width: 768px) {
@@ -85,33 +147,19 @@
   
   .courses-container h2 {
     font-size: 2.2rem;
+    padding: 15px 25px;
   }
   
   .course-cards {
-    gap: 20px;
+    gap: 25px;
     grid-template-columns: 1fr;
   }
   
   .course-card {
-    max-width: 400px;
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 480px) {
-  .courses-container {
-    padding: 40px 15px;
+    padding: 30px 25px;
   }
   
-  .courses-container h2 {
-    font-size: 1.9rem;
-  }
-  
-  .course-card {
-    padding: 25px 20px;
-  }
-  
-  .course-card h3 {
-    font-size: 1.5rem;
+  .soft-skills-card {
+    padding: 35px 25px;
   }
 }

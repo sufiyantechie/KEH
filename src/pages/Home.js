@@ -8,7 +8,7 @@ function Home() {
       <div className="home-left" data-aos="fade-right">
         <h1>Welcome to Kalakadian English Hub</h1>
         <p>Empower yourself with world-class English learning. Master the language with confidence and achieve your goals.</p>
-        <button className="cta-button">Start Learning with Confidence</button>
+        <button className="cta-button" onClick={() => window.open('https://wa.me/919789547717', '_blank')}>Join With Us</button>
       </div>
       <div className="home-right" data-aos="fade-left">
         <video src={sampleVideo} autoPlay loop muted playsInline></video>
